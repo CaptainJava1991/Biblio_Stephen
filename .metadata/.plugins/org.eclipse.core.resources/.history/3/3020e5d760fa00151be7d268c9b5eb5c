@@ -1,0 +1,28 @@
+package dao;
+
+import java.util.Date;
+
+import metier.Adherent;
+
+public class AdherentDAO {
+	
+	private static Adherent[] adherentsDB = {
+		new Adherent("Cornet","Stephen",new Date(),"M","Luffy","1234","0147841254"),
+		new Adherent("Dornet","Stophen",new Date(),"M","Lfy","1234","0147841254"),
+		new Adherent("Bornet","Stiphen",new Date(),"M","fy","1234","0147841254"),
+		new Adherent("Tornet","Stuphen",new Date(),"M","y","1234","0147841254"),
+		new Adherent("Fornet","StAphen",new Date(),"M","L","1234","0147841254")};
+	
+	public Adherent findById(int id){
+		for (Adherent a : adherentsDB){
+			if(a.getIdUtilisateur() == id)
+				return a;
+		}
+		return null;
+	}
+
+	public static void main(String[] args) {
+		
+	}
+
+}

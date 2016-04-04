@@ -16,4 +16,5 @@ public class EmpruntArchive {
 		this.utilisateur = u;
 		this.exemplaire = ex;
 	}
+	
 }

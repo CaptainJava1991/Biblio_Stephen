@@ -1,0 +1,33 @@
+package dao;
+
+import java.util.Date;
+
+import metier.Exemplaire;
+import metier.Livre;
+
+public class ExemplaireDAO {
+	
+	private static Livre l = new Livre("2811205063","Sorceleur, tome 1 : Le dernier voeu",
+			new Date(),358);
+	private static Exemplaire[] exemplairesDB = {new Exemplaire(l,new Date()),
+		new Exemplaire(l,new Date()),
+		new Exemplaire(l,new Date()),
+		new Exemplaire(l,new Date()),
+		new Exemplaire(l,new Date()),
+		new Exemplaire(l,new Date())};
+	
+	public Exemplaire findById(int id){
+		for(Exemplaire e : exemplairesDB){
+			if(e.getIdExemplaire() == id)
+				return e;
+		}
+		 
+		return null;
+	}
+	
+	public static void main(String[] args){
+		for(Exemplaire e : exemplairesDB){
+			System.out.println(e.getIdExemplaire());
+		}
+	}
+}

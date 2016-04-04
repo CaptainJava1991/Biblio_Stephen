@@ -55,4 +55,9 @@ public class EmpruntEnCours {
 		this.utilisateur.getEmpruntEnCours().remove(this);
 		this.exemplaire.setEmprunt(null);
 	}
+	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("Je suis collecté!");
+		super.finalize();
+	}
 }

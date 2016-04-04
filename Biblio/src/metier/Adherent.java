@@ -33,7 +33,7 @@ public class Adherent extends Utilisateur {
 			form.format(ep.getDateEmprunt());
 	
 			Calendar calendar = form.getCalendar();
-			System.out.println();
+	
 			
 			calendar.add(Calendar.DAY_OF_YEAR, dureeMaxPrets);
 			Date ajd = new Date();
@@ -60,7 +60,7 @@ public class Adherent extends Utilisateur {
 	}
 	
 	public boolean isConditionsPretAcceptees(){
-		return ((getNbRetards() == 0 && getEmpruntEnCours().size() <= 3)? 
+		return ((getNbRetards() == 0 && getEmpruntEnCours().size() < nbMaxPrets)? 
 				true : false);
 	}
 	

@@ -23,8 +23,10 @@ public class Exemplaire {
 	public void setEmprunt(EmpruntEnCours emprunt){
 		if(emprunt == null){
 			this.emprunt = null;
+			status = EnumStatusExemplaire.DISPONIBLE;
 		}else {
 			this.emprunt = emprunt;
+			status = EnumStatusExemplaire.PRETE;
 		}
 	}
 	
@@ -42,5 +44,9 @@ public class Exemplaire {
 	
 	public EmpruntEnCours getEmprunt(){
 		return this.emprunt;
+	}
+	
+	public int getIdExemplaire(){
+		return this.idExemplaire;
 	}
 }

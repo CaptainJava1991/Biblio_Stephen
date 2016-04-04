@@ -1,0 +1,44 @@
+package test;
+
+import java.util.Date;
+
+import metier.Adherent;
+import metier.BiblioException;
+import metier.Employe;
+import metier.EmpruntEnCours;
+import metier.Exemplaire;
+import metier.Livre;
+import dao.AdherentDAO;
+import dao.EmployeDAO;
+import dao.ExemplaireDAO;
+
+public class TestDeBase {
+
+	public static void main(String[] args) throws BiblioException {
+		ExemplaireDAO edao = new ExemplaireDAO();
+		Exemplaire e1 = edao.findById(1);
+		Exemplaire e2 = edao.findById(4);
+		Exemplaire e3 = edao.findById(10);
+		System.out.println(e1);
+		System.out.println(e2);
+		System.out.println(e3);
+		
+		AdherentDAO adao = new AdherentDAO();
+		Adherent a1 = adao.findById(2);
+		System.out.println(a1);
+		
+		EmployeDAO emdao = new EmployeDAO();
+		Employe em1 = emdao.findById(8);
+		System.out.println(em1);
+		
+		Livre l = new Livre("","Sorceleur, tome 1 : Le dernier voeu",
+				new Date(),358);
+		Exemplaire ex1 = new Exemplaire(new Date(),"2811205063");
+		Exemplaire ex2 = new Exemplaire(new Date(), "2811205063");
+		
+		a1.addEmpruntEnCours(new EmpruntEnCours(new Date(), ex1));
+		em1.addEmpruntEnCours(new EmpruntEnCours(new Date(), ex1));
+
+	}
+
+}

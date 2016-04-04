@@ -1,0 +1,39 @@
+package test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import metier.Adherent;
+import metier.BiblioException;
+import metier.Employe;
+import metier.EmpruntEnCours;
+import metier.Exemplaire;
+import dao.AdherentDAO;
+import dao.EmployeDAO;
+import dao.ExemplaireDAO;
+
+public class TestAdherentEnRetard {
+	public static void main(String[] args) throws BiblioException {
+		ExemplaireDAO edao = new ExemplaireDAO();
+		Exemplaire e1 = edao.findById(1);
+		Exemplaire e2 = edao.findById(4);
+		
+		AdherentDAO adao = new AdherentDAO();
+		Adherent a1 = adao.findById(2);
+		System.out.println(a1);
+	
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		Exemplaire ex1 = new Exemplaire(df.parse("02/01/2016"),"2811205063");
+		Exemplaire ex2 = new Exemplaire(new Date(), "2811205063");
+		
+		EmpruntEnCours emprunt = new EmpruntEnCours(new Date(),a1,ex1);
+		System.out.println(a1.getEmpruntEnCours().get(0));
+		
+		EmpruntEnCours emprunt2 = new EmpruntEnCours(new Date(),a1,ex2);
+		System.out.println(em1.getEmpruntEnCours().get(0));
+
+
+		
+
+	}
+}
