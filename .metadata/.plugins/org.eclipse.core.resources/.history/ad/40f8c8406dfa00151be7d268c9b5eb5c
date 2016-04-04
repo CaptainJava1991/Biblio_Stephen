@@ -1,0 +1,56 @@
+package metier;
+
+import java.util.Date;
+
+public class Personne {
+	private String nom;
+	private String prenom;
+	private String sexe;
+	private Date dateNaissance;
+	
+	public Personne(String nom, String prenom, String sexe, Date date){
+		setNom(nom);
+		this.prenom = prenom;
+		this.sexe = sexe;
+		this.dateNaissance = date;
+	}
+	
+	private void setNom(String nom){
+		for(int i = 0; i < nom.length(); i++){
+			if(!Character.isLetter(nom.charAt(i))){
+				try {
+					throw new BiblioException("Le nom est erroné");
+				} catch (BiblioException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		this.nom = nom;
+	}
+	
+	private void setPrenom(String prenom){
+		for(int i = 0; i < prenom.length(); i++){
+			if(!Character.isLetter(prenom.charAt(i))){
+				try {
+					throw new BiblioException("Le prènom est erroné");
+				} catch (BiblioException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		this.prenom = prenom;
+	}
+	
+	private void setSexe(String sexe){
+		for(int i = 0; i < sexe.length(); i++){
+			if(!Character.isLetter(sexe.charAt(i))){
+				try {
+					throw new BiblioException("Le sexe est erroné");
+				} catch (BiblioException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		this.sexe = sexe;
+	}
+}

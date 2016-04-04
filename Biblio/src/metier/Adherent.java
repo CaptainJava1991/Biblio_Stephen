@@ -13,6 +13,18 @@ public class Adherent extends Utilisateur {
 		super(nom, prenom, sexe, date);
 		setTelephone(telephone);
 	}
+	
+	public String toString(){
+		return "Utilisateur " 
+				+"\n\t\t Nom " + getNom()
+				+"\n\t\t Prenom " + getPrenom()
+				+"\n\t\t Pseudonyme " + getPseudonyme()
+				+"\n\t\t Sexe " + getSexe()
+				+"\n\t\t Telephone " + this.telephone
+				+"\n\t\t Date de naissance " + getDateDeNaissance().toString()
+				+"\n\t\t n°Utilisateur " +  getIdUtilisateur()
+				+"\n";
+	}
 
 	public void setTelephone(String telephone) {
 		for(int i = 0; i < telephone.length(); i++){

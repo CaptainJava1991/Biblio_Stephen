@@ -20,6 +20,15 @@ public class Exemplaire {
 		this.listArchive = new ArrayList<EmpruntArchive>();
 	}
 	
+	public String toString(){
+		return "Exemplaire" 
+				+"\n\t\t ISBN " + this.isbn
+				+"\n\t\t n°Exemplaire " + this.idExemplaire
+				+"\n\t\t Date d'achat " + this.dateAchat
+				+"\n\t\t status " + this.status
+				+"\n";
+	}
+		
 	public void setEmprunt(EmpruntEnCours emprunt){
 		if(emprunt == null){
 			this.emprunt = null;
@@ -49,4 +58,6 @@ public class Exemplaire {
 	public int getIdExemplaire(){
 		return this.idExemplaire;
 	}
+	
+
 }

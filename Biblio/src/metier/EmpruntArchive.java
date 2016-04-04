@@ -17,4 +17,12 @@ public class EmpruntArchive {
 		this.exemplaire = ex;
 	}
 	
+	public String toString(){
+		return "Emprunt Archivé"
+				+"\n\t\t DATE DE RESTITUTION " + this.dateRestitution
+				+"\n\t\t DATE D'EMPRUNT " + this.dateEmprunt
+				+"\n\t\t " + this.utilisateur
+				+"\n\t\t "  + this.exemplaire
+				+"\n";
+	}
 }

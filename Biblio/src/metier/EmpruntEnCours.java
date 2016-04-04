@@ -60,4 +60,12 @@ public class EmpruntEnCours {
 		System.out.println("Je suis collecté!");
 		super.finalize();
 	}
+	
+	public String toString(){
+		return "EMPRUNT EN COURS"
+				+"\n\t\t DATE D'EMPRUNT " + this.dateEmprunt
+				+"\n\t\t UTILISATEUR " + this.utilisateur
+				+"\n\t\t EXEMPLAIRE " + this.exemplaire
+				+"\n";
+	}
 }

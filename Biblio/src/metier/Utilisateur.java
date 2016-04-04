@@ -19,6 +19,19 @@ public class Utilisateur extends Personne {
 		listArchive = new ArrayList<EmpruntArchive>();
 	}
 	
+
+	public String toSring(){
+		return "Utilisateur " 
+				+"\n\t\t Nom " + getNom()
+				+"\n\t\t Prenom " + getPrenom()
+				+"\n\t\t Pseudonyme " + this.pseudonyme
+				+"\n\t\t Sexe " + getSexe()
+				+"\n\t\t Date de naissance " + getDateDeNaissance().toString()
+				+"\n\t\t n°Utilisateur " +  this.idUtilisateur
+				+"\n";
+	}
+
+	
 	public void setPseudonyme(String pseudonyme){
 		this.pseudonyme = pseudonyme;
 	}

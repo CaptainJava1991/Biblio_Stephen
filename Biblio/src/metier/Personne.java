@@ -15,6 +15,19 @@ public class Personne {
 		this.dateNaissance = date;
 	}
 	
+	public String toString(){
+		return "Personne " 
+				+"\n\t\t Nom " + this.nom
+				+"\n\t\t Prenom " + this.prenom
+				+"\n\t\t Sexe " + this.sexe
+				+"\n\t\t Date de naissance " + this.dateNaissance.toString()
+				+"\n";
+	}
+	
+	public String getNom(){
+		return nom;
+	}
+	
 	private void setNom(String nom){
 		for(int i = 0; i < nom.length(); i++){
 			if(!Character.isLetter(nom.charAt(i))){
@@ -26,6 +39,10 @@ public class Personne {
 			}
 		}
 		this.nom = nom;
+	}
+	
+	public String getPrenom(){
+		return prenom;
 	}
 	
 	private void setPrenom(String prenom){
@@ -41,6 +58,10 @@ public class Personne {
 		this.prenom = prenom;
 	}
 	
+	public String getSexe(){
+		return sexe;
+	}
+	
 	private void setSexe(String sexe){
 		for(int i = 0; i < sexe.length(); i++){
 			if(!Character.isLetter(sexe.charAt(i))){
@@ -52,5 +73,9 @@ public class Personne {
 			}
 		}
 		this.sexe = sexe;
+	}
+	
+	public Date getDateDeNaissance(){
+		return this.dateNaissance;
 	}
 }
