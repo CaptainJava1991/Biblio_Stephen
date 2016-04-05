@@ -76,5 +76,7 @@ public class Utilisateur extends Personne {
 		this.idUtilisateur = idUtilisateur;
 	}
 	
-	
+	public boolean isConditionsPretAcceptees(){
+		return true;
+	}
 }

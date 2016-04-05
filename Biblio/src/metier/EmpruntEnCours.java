@@ -24,18 +24,14 @@ public class EmpruntEnCours {
 	}
 	
 	private void setUtilisateur(Utilisateur u) throws BiblioException{
-		if(u instanceof Adherent){
-			Adherent adherent = (Adherent)u;
-			if(adherent.isConditionsPretAcceptees()){
+		
+			if(u.isConditionsPretAcceptees()){
 				this.utilisateur = u;
 				this.utilisateur.addEmpruntEnCours(this);
 			}else{
 				throw new BiblioException("Adherent ne peut pas emprunter");
 			}
-		}else{
-			this.utilisateur = u;
-			this.utilisateur.addEmpruntEnCours(this);
-		}
+			
 	}
 	
 	private void setExemplaire(Exemplaire ex) throws BiblioException{
