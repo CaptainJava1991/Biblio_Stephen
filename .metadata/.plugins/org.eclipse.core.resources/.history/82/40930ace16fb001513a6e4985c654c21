@@ -59,10 +59,5 @@ public class Exemplaire {
 		return this.idExemplaire;
 	}
 	
-	public void endOfEmprunt(){
-		if(emprunt != null){
-			emprunt.endOfEmprunt();
-		}
-	}
 
 }
