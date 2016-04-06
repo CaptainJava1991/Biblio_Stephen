@@ -76,6 +76,8 @@ public abstract class Utilisateur extends Personne {
 		this.idUtilisateur = idUtilisateur;
 	}
 	
-	public abstract boolean isConditionsPretAcceptees();
+	public boolean isConditionsPretAcceptees(){
+		return true;
+	}
 	
 }
